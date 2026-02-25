@@ -3,33 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Catalog</title>
+    <title>Shop</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Product Explorer</h1>
-        <div class="controls">
-            <select id="categoryFilter">
-                <option value="all">All Categories</option>
-                <option value="Electronics">Electronics</option>
-                <option value="Accessories">Accessories</option>
-                <option value="Sports">Sports</option>
-                <option value="Clothing">Clothing</option>
-            </select>
+    <div class="app-wrapper">
+        <aside class="sidebar">
+            <h1 class="brand-logo">Product Catalog</h1>
+            
+            <div class="sidebar-section">
+                <p class="section-title">CATEGORIES</p>
+                <ul class="filter-list" id="categoryMenu">
+                    <li data-category="all" class="category-item active">All Items</li>
+                    <li data-category="Sports" class="category-item">Sports</li>
+                    <li data-category="Accessories" class="category-item">Accessories</li>
+                    <li data-category="Electronics" class="category-item">Electronics</li>
+                    <li data-category="Clothing" class="category-item">Clothing</li>
+                </ul>
+            </div>
+        </aside>
 
-            <select id="sortOrder">
-                <option value="default">Sort By...</option>
-                <option value="low-high">Price: Low to High</option>
-                <option value="high-low">Price: High to Low</option>
-                <option value="az">Name: A - Z</option>
-            </select>
-        </div>
-    </header>
+        <main class="content-area">
+            <header class="content-header">
+                <span class="view-title">Our Products</span>
+                <div class="sort-controls">
+                    <label for="sortOrder">Adjust By </label>
+                    <select id="sortOrder">
+                        <option value="default">Default</option>
+                        <option value="low-high">Price: Low to High</option>
+                        <option value="high-low">Price: High to Low</option>
+                        <option value="az">Name: A - Z</option>
+                    </select>
+                </div>
+            </header>
 
-    <main id="productGrid" class="product-grid">
+            <section id="productGrid" class="product-grid">
+                </section>
         </main>
+    </div>
 
     <script src="script.js"></script>
 </body>

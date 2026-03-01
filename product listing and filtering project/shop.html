@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+    <title>ShopEase | Product Catalog</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="app-wrapper">
         <aside class="sidebar">
-            <h1 class="brand-logo">Product Catalog</h1>
+            <h1 class="brand-logo">ShopEase</h1>
             
             <div class="sidebar-section">
                 <p class="section-title">CATEGORIES</p>
@@ -22,18 +22,24 @@
                     <li data-category="Clothing" class="category-item">Clothing</li>
                 </ul>
             </div>
+
+            <div class="sidebar-section">
+                <p class="section-title">YOUR CART</p>
+                <button id="openCartBtn" class="nav-cart-btn">
+                    🛒 View Cart (<span id="cartCount">0</span>)
+                </button>
+            </div>
         </aside>
 
         <main class="content-area">
             <header class="content-header">
                 <span class="view-title">Our Products</span>
                 <div class="sort-controls">
-                    <label for="sortOrder">Adjust By </label>
+                    <label>Adjust By: </label>
                     <select id="sortOrder">
                         <option value="default">Default</option>
                         <option value="low-high">Price: Low to High</option>
                         <option value="high-low">Price: High to Low</option>
-                        <option value="az">Name: A - Z</option>
                     </select>
                 </div>
             </header>
@@ -41,6 +47,36 @@
             <section id="productGrid" class="product-grid">
                 </section>
         </main>
+    </div>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Your Shopping Cart</h2>
+                <span class="close-btn" id="closeCart">&times;</span>
+            </div>
+            <div id="cartItemsList" class="cart-items-container">
+                </div>
+            <div class="cart-footer">
+                <div class="summary-line">
+                    <span>Total Items:</span>
+                    <span id="totalQty">0</span>
+                </div>
+                <div class="summary-line total">
+                    <span>Total Price:</span>
+                    <span>$<span id="totalPrice">0</span></span>
+                </div>
+                <button id="checkoutBtn" class="confirm-btn" disabled>Confirm Order</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="successOverlay" class="success-overlay">
+        <div class="success-card">
+            <h2 style="color: #28a745; margin-bottom: 15px;">Order Confirmed!</h2>
+            <p>Thank you for your purchase. Your order has been placed successfully.</p>
+            <button onclick="closeSuccess()" class="back-home-btn">Back to Home</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
